@@ -1,12 +1,12 @@
 function [x_k_c, P_k, yaw_k_c] = ekf_single_float(x_k_1_c, P_k_1, z_k)
     % initialization
     persistent Q R;
-    Q = [0.5, 0, 0;
-         0, 0.5, 0;
-         0, 0, 0.3];
-    R = [0.5, 0, 0;
-         0, 0.5, 0;
-         0, 0, 0.6];
+    Q = [0.03, 0, 0;
+         0, 0.03, 0;
+         0, 0, 0.02];
+    R = [0.05, 0, 0;
+         0, 0.05, 0;
+         0, 0, 0.03];
 
     % prediction
     x_k_p = attStateFcn(x_k_1_c);
