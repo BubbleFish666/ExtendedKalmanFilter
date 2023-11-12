@@ -10,9 +10,9 @@ VeloE = single(table2array(data(3:end,18)));
 heading = single(table2array(data(3:end,25)));
 
 %% set data range in time (seconds)
-% data_range = (144 <= t) & (t <= 160);
+data_range = (144 <= t) & (t <= 160);
 % data_range = (22 <= t) & (t <= 35);
-data_range = (109 <= t) & (t <= 120);
+% data_range = (109 <= t) & (t <= 120);
 
 %% plot data
 subplot(3,1,1);
@@ -58,12 +58,7 @@ hold on
 x0 = [0.1;0.1;pi/4];
 x_k_1_c = x0;
 P_k_1 = eye(3);
-Q = [0.5, 0, 0.01;
-     0, 0.5, 0.01;
-     0.01, 0.01, 0.3];
-R = [0.5, 0, 0.1;
-     0, 0.5, 0.1;
-     0.1, 0.1, 0.6];
+
 
 %% Kalman Filter
 range_start = find(data_range,1,'first');
